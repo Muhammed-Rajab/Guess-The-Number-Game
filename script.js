@@ -7,6 +7,7 @@ const score = document.querySelector("#score");
 const high_score = document.querySelector("#high-score > span");
 const secret_num_box = document.querySelector(".box > span");
 const againBtn = document.querySelector("#restart");
+const scoreBanner = document.querySelector(".score-banner");
 
 let score_ = 20;
 
@@ -27,6 +28,7 @@ checkBtn.addEventListener("click", () => {
         document.querySelectorAll("body, body *, *").forEach(function(elem) {
             elem.style.setProperty("background-color", "#60b347");
         });
+        scoreBanner.innerHTML = secret_num;
     } else if (guess.value !== secret_num) {
         if (score_ > 1) {
             number_hint.textContent = guess.value > secret_num ? "Too High!" : "Too Low!";
